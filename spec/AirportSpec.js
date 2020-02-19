@@ -3,7 +3,7 @@ describe("Airport", function() {
   var airport
   beforeEach(function() {
     plane = new Plane(); 
-    airport = new Airport();
+    airport = new Airport(10);
   });
 
   it('should let a plane land', function(){
@@ -23,5 +23,4 @@ describe("Airport", function() {
     }
     expect(function(){airport.land(plane)}).toThrowError("Airport is full");
   });
-
 });

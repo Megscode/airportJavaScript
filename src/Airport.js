@@ -1,6 +1,6 @@
-function Airport() {
+function Airport(capacity) {
   this.storage = []
-  this.capacity = 5
+  this.capacity = capacity
 }
 
 Airport.prototype.land = function(plane) {
@@ -8,6 +8,7 @@ Airport.prototype.land = function(plane) {
     throw new Error("Airport is full")
   } else {
     this.storage.push(plane)
+    plane.inflight = false
   }
 }
 
