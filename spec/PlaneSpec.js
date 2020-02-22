@@ -8,11 +8,12 @@ describe("Plane", function(){
   });
 
   it('plane should have a default inflight value of true', function() {
-    expect(plane.inflight).toEqual(true)
+    expect(plane.isInflight).toEqual(true)
   });
 
   it('should change plane to inflight if flying', function(){
+    spyOn(airport.weather, 'isStormy').and.returnValue(false)
     airport.land(plane)
-    expect(plane.inflight).toEqual(false)
+    expect(plane.isInflight).toEqual(false)
   });
 });
